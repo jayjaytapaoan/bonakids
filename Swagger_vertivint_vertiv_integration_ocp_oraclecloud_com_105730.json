@@ -1,0 +1,66 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Oraclecloud",
+    "description": "API for vertivint-vertiv.integration.ocp.oraclecloud.com",
+    "version": "0.0.0"
+  },
+  "host": "vertivint-vertiv.integration.ocp.oraclecloud.com:443",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/ic/api/integration/v1/flows/rest/XXOIC_K2_MARKETUNIT/1.0/marketunit/{isactive}": {
+      "get": {
+        "tags": [
+          "Ic"
+        ],
+        "description": "Api",
+        "operationId": "api",
+        "parameters": [
+          {
+            "name": "isactive",
+            "in": "path",
+            "description": "Isactive",
+            "required": true,
+            "type": "string",
+            "x-example": "Y"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "marketunits": [
+                  {
+                    "id": "1",
+                    "marketunit": "Australia",
+                    "description": "description",
+                    "code": "code",
+                    "currency": "currency",
+                    "isactive": "isactive"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "security": [
+        ]
+      }
+    }
+  },
+  "definitions": {
+  },
+  "securityDefinitions": {
+  },
+  "security": [
+  ],
+  "tags": [
+    {
+      "name": "Ic",
+      "description": "Operations about Ic"
+    }
+  ]
+}
