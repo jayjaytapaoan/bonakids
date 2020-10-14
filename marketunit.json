@@ -1,0 +1,120 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Oraclecloud",
+    "description": "API for vertivint-vertiv.integration.ocp.oraclecloud.com",
+    "version": "0.0.0"
+  },
+  "host": "vertivint-vertiv.integration.ocp.oraclecloud.com:443",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/ic/api/integration/v1/flows/rest/XXOIC_K2_MARKETUNIT/1.0/marketunit/{isactive}": {
+      "get": {
+        "tags": [
+          "Ic"
+        ],
+        "description": "Api",
+        "operationId": "api",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "isactive",
+            "in": "path",
+            "description": "Isactive",
+            "required": true,
+            "type": "string",
+            "x-example": "Y"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Marketunits"
+            },
+            "examples": {
+              "application/json": {
+                "marketunits": [
+                  {
+                    "id": "1",
+                    "marketunit": "Australia",
+                    "description": "description",
+                    "code": "code",
+                    "currency": "currency",
+                    "isactive": "isactive"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Default": [
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Marketunits": {
+      "description": "Model for Marketunits",
+      "required": [
+        "code"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string" 
+        },
+        "isactive": {
+          "type": "string"
+        },
+        "marketunit": {
+          "type": "string"
+        }
+      }
+    },
+    "Api": {
+      "description": "Model for Api",
+      "required": [
+        "marketunits"
+      ],
+      "properties": {
+        "marketunits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Marketunits"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Default": {
+      "description": "Default Authentication",
+      "type": "basic"
+    }
+  },
+  "security": [
+  ],
+  "tags": [
+    {
+      "name": "Ic",
+      "description": "Operations about Ic"
+    }
+  ]
+}
